@@ -1,0 +1,262 @@
+/* Common styles and reset styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  color: #333;
+}
+body {
+  font-family: 'Lato', sans-serif;
+}
+#root {
+  height: 100%;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+span.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 2px 7px;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.header{
+  background-color: #203040;
+  color: #ffffff;
+  padding: 30px;
+}
+.header:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.brand {
+  float: left;
+}
+.brand a{
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header-links {
+  float: right;
+}
+.header-links a{
+  color:#ffffff;
+  text-decoration: none;
+  padding: 10px;
+
+}
+.header-links a:hover{
+  color:#ff8000;
+}
+
+/* Main styles for section */
+
+header {
+  position: fixed;
+  top: 0;
+  background-color: #eee;
+  width: 100%;
+}
+
+.movie-app {
+  margin-top: 80px;
+  padding: 20px 0 0 0;
+}
+.movie-app ul {
+  padding: 0 100px;
+  margin: 0 auto;
+}
+.movie-app:after, .movie-app ul:after {
+  content: "";
+  display:block;
+  clear: both;
+}
+.movie-app ul li.movie-list {
+  width: calc((100% / 2) - 40px);
+  float: left;
+  margin: 20px !important;
+  border: 1px solid #eee;
+  max-width: 250px;
+  transition: .2s linear;
+  border-radius: 4px;
+}
+.movie-app ul li.movie-list:hover {
+  transform: scale(1.01);
+  box-shadow: 0 1px 5px #eee;
+}
+/* .movie-app ul li.movie-list:nth-child(3) {
+  margin-right: 0;
+} */
+.movie-app ul li.movie-list figure {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.movie-app ul li.movie-list figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+.movie-app ul li.movie-list figcaption {
+  padding: 10px 15px;
+}
+.movie-app ul li.movie-list figcaption h1 {
+  overflow: hidden;
+  cursor: pointer;
+}
+.movie-app ul li.movie-list figcaption h1 a {
+  font-size: 18px;
+  text-decoration: none;
+}
+.movie-app ul li.movie-list figcaption span {
+  font-size: 12px;
+  opacity: .8;
+  margin: 10px 20px 0 0;
+  display: inline-block;
+}
+
+
+/* For aside styles */
+
+aside.movie-details {
+  width: 30%;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  border-left: 1px solid #ccc;
+  background-color: #fff;
+}
+aside.movie-details figure {
+  width: 100%;
+  height: 300px;
+}
+aside.movie-details figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+aside.movie-details figcaption {
+}
+aside.movie-details figcaption .name-tile {
+  padding: 15px 20px;
+  background-color: rgba(204, 204, 204, 0.7);
+}
+aside.movie-details figcaption h2.detail-name {
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+aside.movie-details figcaption p.detail-description {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 10px 20px;
+}
+aside.movie-details figcaption h3 {
+  padding: 10px 20px 0;
+  margin-top: 10px;
+}
+
+/* movie details */
+
+.movie-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-top: 100px;
+  padding: 10px;
+}
+.details-image {
+  flex: 2 1 150px;
+}
+.details-image img {
+  width: 100%;
+}
+.details-info {
+  flex: 1 1 100px;
+}
+.details-action {
+  flex: 1 1 100px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fafafa;
+  padding: 10px;
+}
+.details-action ul li {
+  margin-bottom: 10px;
+}
+.details-action ul li:last-child {
+  display: flex;
+  flex-direction: column;
+}
+.details-action ul li button{
+  padding: 10px;
+  border: 1px solid #000;
+  cursor: pointer;
+  outline: none;
+  border-radius: 4px;
+  background-color: #ff8000;
+  opacity: .8;
+  color: #000;
+}
+.details-action ul li button:hover {
+  opacity: 1;
+}
+
+.details-info li {
+  margin-bottom: 20px;
+}
+
+
+
+/* For responsive code */
+
+@media only screen and (max-width: 1200px) {
+  .movie-genre {
+      display: none;
+  }
+  .movie-app ul {
+      width: 93%;
+  }
+}
+
+
+/* For tablet */
+
+@media only screen and (max-width: 940px) {
+  .movie-app ul {
+      padding: 0;
+  }
+}
+
+
+/* For image */
+
+@media only screen and (max-width: 640px) {
+  .movie-details {
+      display: none;
+  }
+  .movie-app ul {
+      width: 100%;
+  }
+  aside.movie-details {
+      width: 100%;
+  }
+}
